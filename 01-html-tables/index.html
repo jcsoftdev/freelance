@@ -1,89 +1,221 @@
-<style>
-  * {
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+<!DOCTYPE html>
+<html lang="en">
 
-  .table-container {
-    overflow-x: auto;
-    width: 100%;
-    justify-content: center;
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
-  .table {
-    border-collapse: collapse;
-    white-space: nowrap;
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
+      justify-content: center;
+    }
 
-  }
+    .table {
+      border-collapse: collapse;
+      white-space: nowrap;
+      /* width: 100%; */
+    }
 
-  .table th,
-  .table td {
-    padding: 10px;
-    text-align: left;
-    vertical-align: baseline;
-    border: 1px solid #bbb;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  @media screen and (max-width: 600px) {
+    .table th {
+      background-color: #151515;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #111 !important;
+    }
 
     .table th,
     .table td {
-      padding: 5px;
-      font-size: 12px;
+      padding: 10px;
+      text-align: left;
+      vertical-align: baseline;
+      border: 1px solid #bbb;
+      min-width: 150px;
     }
-  }
-</style>
 
-<div class="table-container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Talent Acquisition</th>
-        <th>HR Operations </th>
-        <th>Talent Development</th>
-        <th>Compensation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <p>Number of hires</p>
-          <p>TA budget</p>
-          <p>Time to fill (TTF)</p>
-          <p>Number of applicants</p>
-          <p>Number of interviews</p>
-          <p>Offer decline rate</p>
-          <p>Candidate satisfaction</p>
-        </td>
-        <td>
+    .no-wrap {
+      vertical-align: baseline;
+      white-space: inherit;
+      white-space: pre-line;
+      max-width: 250px;
+    }
 
-          <p>Headcount</p>
-          <p>Attrition rate</p>
-          <p>Diverse headcount</p>
-          <p>Span of control</p>
-          <p>Employee survey</p>
-        </td>
-        <td>
+    p {
+      margin: 0;
 
-          <p>ER cases</p>
-          <p>Training hours</p>
-          <p>Promotion rate</p>
-          <p>Transfer rate</p>
-        </td>
-        <td>
+    }
 
-          <p>Performance</p>
-          <p>Compa-ratsp</p>
-          <p>Pay gap</p>
-
-        </td>
-      </tr>
+    .mt-1 {
+      margin-top: 1rem;
+    }
 
 
-    </tbody>
-  </table>
-</div>
+    @media screen and (max-width: 600px) {
+
+      .table th,
+      .table td {
+        padding: 5px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>First table</h2>
+  <div class="table-container">
+    <table class="table baseline">
+      <thead>
+        <tr>
+          <th>Talent Acquisition</th>
+          <th>HR Operations </th>
+          <th>Talent Development</th>
+          <th>Compensation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>Number of hires</p>
+            <p>TA budget</p>
+            <p>Time to fill (TTF)</p>
+            <p>Number of applicants</p>
+            <p>Number of interviews</p>
+            <p>Offer decline rate</p>
+            <p>Candidate satisfaction</p>
+          </td>
+          <td>
+
+            <p>Headcount</p>
+            <p>Attrition rate</p>
+            <p>Diverse headcount</p>
+            <p>Span of control</p>
+            <p>Employee survey</p>
+          </td>
+          <td>
+
+            <p>ER cases</p>
+            <p>Training hours</p>
+            <p>Promotion rate</p>
+            <p>Transfer rate</p>
+          </td>
+          <td>
+
+            <p>Performance</p>
+            <p>Compa-ratsp</p>
+            <p>Pay gap</p>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>Second table</h2>
+  <div class="table-container mt-1">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>HR Function </th>
+          <th>Metric</th>
+          <th>Insight</th>
+        </tr>
+      </thead>
+      <tbody class="no-wrap">
+        <tr>
+          <td rowspan="3">
+            Talent Acquisition
+          </td>
+          <td>
+            # applicants to # resumes
+            reviewed
+          </td>
+
+          <td>
+            Size of untouched IP. If your recruiters are only
+            looking at 10% of applicants, how much value
+            are you leaving on the table with the other
+            90%?
+          </td>
+        </tr>
+        <tr>
+          <td>
+            # interviews to # hires
+          </td>
+
+
+          <td>
+            Efficiency of your hiring funnel. The perfect
+            efficiency ratio is 1, but if you are seeing this
+            ratio increase over time, why is it taking more
+            interviews to arrive at a decision?
+          </td>
+
+        </tr>
+        <tr>
+
+          <td>
+            Hours per hire
+          </td>
+          <td>
+            Efficiency of your recruiting process. If hiring
+            managers and interviewers are spending more
+            time making a hire, how much time/productivity
+            is taken away from them doing their actual
+            jobs?
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            HR Operations
+          </td>
+          <td>
+            Revenue per employee
+          </td>
+          <td>How much money each employee generates
+            for the company. A higher ratio typically
+            indicates greater productivity and profits.</td>
+        </tr>
+        <tr>
+          <td>
+            HR expense to employees
+          </td>
+          <td>
+            Efficiency of the HR organization. As an
+            organization grows, you want to see your HR
+            investments scale.
+        </tr>
+        <tr>
+          <td>
+            Talent Development
+          </td>
+          <td>Internal hires as a percent
+            of total hires</td>
+          <td>Opportunity for employees for internal mobility.
+            If this percentage is low, there could be a bias
+            towards external talent making career
+            development more difficult</td>
+        </tr>
+        <tr>
+          <td>Compensation</td>
+          <td>Avg. new hire compa-ratio
+            over existing employee
+            compa-ratio</td>
+          <td>Salary compression. If this number increases
+            over time, existing employees' compensation is
+            not keeping up with the market.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
